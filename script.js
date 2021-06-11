@@ -68,17 +68,21 @@ function createCustomElement(element, className, innerText) {
   const e = document.createElement(element);
   e.className = className;
   if (element === 'button') e.addEventListener('click', addToShoppingCart);
-  e.innerText = innerText;
-
+  if (className === 'item__price') {
+    e.innerText = `R$ ${innerText}`;
+  } else {
+    e.innerText = innerText;
+  }
   return e;
 }
 
-function createProductItemElement({ id, title, thumbnail }) {
+function createProductItemElement({ id, title, thumbnail, price }) {
   const section = document.createElement('section');
   section.className = 'item';
 
   section.appendChild(createCustomElement('span', 'item__sku', id));
   section.appendChild(createCustomElement('span', 'item__title', title));
+  section.appendChild(createCustomElement('span', 'item__price', price));
   section.appendChild(createProductImageElement(thumbnail));
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
 
@@ -101,18 +105,18 @@ const Loading = (create) => {
 };
 
 // Gera a Promise do Computador
-const getComputerPromise = (computerName) => new Promise((resolve, reject) => {
+const getComputerPromise = (queryName) => new Promise((resolve, reject) => {
   Loading(true);
-  if (computerName !== 'computador') {
+  if (queryName === undefined) {
     reject(new Error('Nome Errado'));
   } else {
-    fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${computerName}`)
+    fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${queryName}`)
     .then((response) => {
-      response.json().then((computer) => {
+      response.json().then((data) => {
         const sectionPai = document.querySelector('.items');
 
-        computer.results.map((computerUnit) => sectionPai
-          .appendChild(createProductItemElement(computerUnit)));    
+        data.results.map((dataUnit) => sectionPai
+          .appendChild(createProductItemElement(dataUnit)));    
 
         Loading(false);
         resolve();
@@ -122,9 +126,9 @@ const getComputerPromise = (computerName) => new Promise((resolve, reject) => {
 });
 
 // fetch Computer
-const fetchComputer = async () => {
+const fetchComputer = async (query) => {
   try {
-    await getComputerPromise('computador');
+    await getComputerPromise(query);
   } catch (error) {
     console.log(error);
   }
@@ -146,8 +150,17 @@ const reloadCart = () => {
   return listItens.forEach((item) => item.addEventListener('click', cartItemClickListener));
 };
 
+// Pesquisar por categoria
+const search = () => {
+  const input = document.querySelector('.inputSearch');
+  document.querySelector('.items').innerHTML = '';
+  fetchComputer(input.value);
+  document.querySelector('.inputSearch').value = '';
+};
+
 window.onload = function onload() {
-  fetchComputer();
+  fetchComputer('computador');
   reloadCart();
   document.querySelector('.empty-cart').addEventListener('click', eraseCart);
+  document.querySelector('.searchButton').addEventListener('click', search);
 };
