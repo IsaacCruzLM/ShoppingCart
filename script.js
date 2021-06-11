@@ -15,20 +15,33 @@ const updatePrice = (price) => {
 
 // Remove Item do cart
 function cartItemClickListener(event) {
-  const string = event.target.innerHTML;
+  const string = event.target.previousSibling.innerHTML;
   const price = Number(string.split('$')[1]);
   updatePrice(-price);
-  event.target.remove();
+  event.target.parentNode.remove();
   saveLocalStorage();
 }
 
 // Cria o elemento para adicionar ao carrinho
-function createCartItemElement({ id, title, price }) {
+function createCartItemElement({ id, title, price, thumbnail }) {
   const li = document.createElement('li');
   li.id = id;
   li.className = 'cart__item';
-  li.innerText = `SKU: ${id} | NAME: ${title} | PRICE: $${price}`;
-  li.addEventListener('click', cartItemClickListener);
+
+  const img = document.createElement('img');
+  img.src = thumbnail;
+
+  const span = document.createElement('span');
+  span.innerHTML = `SKU: ${id} </br> NAME: ${title} </br> PRICE: $${price}`;
+
+  const icon = document.createElement('img');
+  icon.src = '/public/remove.svg';
+  icon.className = 'cart__icon';
+  icon.addEventListener('click', cartItemClickListener);
+
+  li.appendChild(img);
+  li.appendChild(span);
+  li.appendChild(icon);
   return li;
 }
 
@@ -69,21 +82,29 @@ function createCustomElement(element, className, innerText) {
   e.className = className;
   if (element === 'button') e.addEventListener('click', addToShoppingCart);
   if (className === 'item__price') {
-    e.innerText = `R$ ${innerText}`;
+    e.innerText = `R$ ${innerText.toFixed(2)}`;
   } else {
     e.innerText = innerText;
   }
   return e;
 }
 
-function createProductItemElement({ id, title, thumbnail, price }) {
+function createinstallments(installments) {
+  const span = document.createElement('span');
+  span.className = 'item__installments';
+  span.innerText = `${installments.quantity}x de R$ ${installments.amount} sem juros`;
+  return span;
+}
+
+function createProductItemElement({ id, title, thumbnail, price, installments }) {
   const section = document.createElement('section');
   section.className = 'item';
 
   section.appendChild(createCustomElement('span', 'item__sku', id));
+  section.appendChild(createProductImageElement(thumbnail));
   section.appendChild(createCustomElement('span', 'item__title', title));
   section.appendChild(createCustomElement('span', 'item__price', price));
-  section.appendChild(createProductImageElement(thumbnail));
+  section.appendChild(createinstallments(installments));
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
 
   return section;
@@ -159,7 +180,7 @@ const search = () => {
 };
 
 window.onload = function onload() {
-  fetchComputer('computador');
+  fetchComputer('Motorola');
   reloadCart();
   document.querySelector('.empty-cart').addEventListener('click', eraseCart);
   document.querySelector('.searchButton').addEventListener('click', search);

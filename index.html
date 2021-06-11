@@ -12,22 +12,24 @@
   <body>
     <header>
       <div class="logo">
-        <img src="/shopping-cart-solid.svg" alt="icone">
-        <h1>Projeto Shopping cart</h1>
+        <img src="/public/shopping-cart-solid.svg" alt="icone">
+        <h1>Projeto Shopping Cart</h1>
       </div>
       <div class="search">
         <input class="inputSearch" type="text">
-        <button class="searchButton">Pesquisar</button>
+        <button class="searchButton">
+          <img class="searchButtonIcon" src="/public/search.svg" alt="Procurar">
+        </button>
       </div>
     </header>
     <section class="container">
       <section class="items"></section>
       <section class="cart">
-        <span class="cart__title">Carrinho de compras</span>
+        <span class="cart__title">Carrinho De Compras</span>
         <button class="empty-cart">Esvaziar carrinho</button>
         <ol class="cart__items"></ol>
         <div class="priceBox">
-          <span>Total Price (R$):</span>
+          <span>Preço Total(R$):</span>
           <span id="totalPrice" class="total-price">00</span>
         </div>
       </section>

@@ -31,8 +31,17 @@ header img {
 }
 
 .search button {
-  height: 70%;
+  height: 1.6rem;
+  width: 2rem;
   margin-left: 10px;
+  position: absolute;
+  right: 9%;
+}
+
+.searchButtonIcon {
+  height: 40%;
+  width: 40%;
+  margin: 0 auto 0;
 }
 
 .top-bar {
@@ -68,13 +77,12 @@ header img {
 }
 
 .item {
-  border: 2px solid blue;
   border-radius: 5px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: auto;
-  margin: 5px;
+  margin: 10px;
   width: 200px;
 }
 
@@ -90,7 +98,8 @@ header img {
 
 .item .item__title {
   flex-grow: 1;
-  padding: 10px;
+  font-size: 0.8rem;
+  padding: 0 10px 10px;
   text-align: center;
 }
 
@@ -98,10 +107,20 @@ header img {
   width: 100%;
 }
 
+.item__installments {
+  font-size: 0.9rem;
+  text-align: center;
+  color: green;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
 .item .item__add {
   background-color: green;
   color: white;
-  font-weight: 600;
+  height: 2rem;
+  border-radius: 0 0 0.2rem 0.2rem;
+  font-weight: 700;
   border: 0;
   cursor: pointer;
   margin: 0;
@@ -116,10 +135,9 @@ header img {
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
-  border: 2px solid blue;
   border-radius: 5px;
   margin-right: 10px;
-  padding: 1.5rem;
+  padding: 0.5rem;
   height: 100%;
 }
 
@@ -134,12 +152,13 @@ header img {
   height: 30px;
   margin: 10px;
   font-weight: 500;
-}
-
-.empty-cart:hover {
   background-color: brown;
   color: white;
   font-weight: 700;
+}
+
+.empty-cart:hover {
+  filter: brightness(0.9);
 }
 
 .cart__items {
@@ -147,19 +166,30 @@ header img {
 }
 
 .cart__item {
-  margin: 10px 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
 }
 
-.cart__item:hover {
-  background-color: rgba(165, 42, 42, 0.4);
+.cart__icon {
+  width: 20px;
+  margin: 3px 3px 3px 8px;
+  height: 100%;
+}
+
+.cart__icon:hover {
+  background-color: brown;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 .priceBox {
   background-color: rgb(78, 124, 78);
   width: 80%;
-  margin: 20px auto;
+  margin: 10px auto 20px;
   padding: 5px;
   border-radius: 2.5px;
+  text-align: center;
 }
 
 .loadingModal {
