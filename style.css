@@ -11,6 +11,7 @@ body {
 header {
   background-color: rgb(78, 124, 78);
   display: flex;
+  align-items: center;
   justify-content: space-around;
   margin-bottom: 20px;
   padding: 1rem;
@@ -37,15 +38,16 @@ header img {
 .search button {
   height: 1.6rem;
   width: 2rem;
-  margin-left: 10px;
-  position: absolute;
-  right: 9%;
 }
 
 .searchButtonIcon {
   height: 40%;
   width: 40%;
   margin: 0 auto 0;
+}
+
+.searchMobile {
+  display: none;
 }
 
 .top-bar {
@@ -224,4 +226,69 @@ header img {
   text-align: center;
   font-size: 2rem;
   z-index: 1;
+}
+
+@media screen and (max-width: 630px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  header img {
+    width: 25px;
+    margin-right: 1rem;
+  }
+
+  .search input {
+    height: 26px;
+    width: 70%;
+    margin-left: 10px;
+  }
+  
+  .search button {
+    height: 1.6rem;
+    width: 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  header img {
+    width: 25px;
+    margin-right: 1rem;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .searchMobile {
+    display: flex;
+  }
+
+  .searchMobileButton {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .cartMobile {
+    height: 2rem;
+    width: 2rem;
+    margin-left: 5px;
+  }
+
+  .searchCartIcon {
+    width: 1rem;
+    margin: 0.1rem auto auto 0;
+  }
+
+  .items {
+    width: 90%;
+  }
+
+  .cart {
+    display: none;
+  }
 }
