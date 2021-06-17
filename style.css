@@ -21,8 +21,15 @@ header {
   display: flex;
 }
 
-header img {
-  width: 40px;
+.logo h1 {
+  align-self: center;
+  margin-right: 1rem;
+}
+
+header i {
+  font-size: 40px;
+  text-align: center;
+  margin: auto;
   margin-right: 2rem;
 }
 
@@ -32,7 +39,7 @@ header img {
 }
 
 .search input {
-  height: 70%;
+  height: 1.6rem;
 }
 
 .search button {
@@ -41,9 +48,8 @@ header img {
 }
 
 .searchButtonIcon {
-  height: 40%;
-  width: 40%;
-  margin: 0 auto 0;
+  font-size: 100%;
+  margin: auto;
 }
 
 .searchMobile {
@@ -186,7 +192,7 @@ header img {
 }
 
 .cart__icon {
-  width: 20px;
+  font-size: 20px;
   margin: 3px 3px 3px 8px;
   height: 100%;
 }
@@ -280,8 +286,8 @@ header img {
   }
 
   .searchCartIcon {
-    width: 1rem;
-    margin: 0.1rem auto auto 0;
+    font-size: 100%;
+    margin: auto;
   }
 
   .items {
