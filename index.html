@@ -34,14 +34,28 @@
     <section class="container">
       <section class="items"></section>
       <section class="cart">
-        <span class="cart__title">Carrinho De Compras</span>
-        <button class="empty-cart">Esvaziar carrinho</button>
-        <ol class="cart__items"></ol>
-        <div class="priceBox">
-          <span>Preço Total(R$):</span>
-          <span id="totalPrice" class="total-price">00</span>
+        <div>
+          <i class="fas fa-times-circle removeCart"></i>
+          </br>
+          <span class="cart__title">Carrinho De Compras</span>
+          </br>
+          <button class="empty-cart">Esvaziar carrinho</button>
+          <ol class="cart__items"></ol>
+          <div class="priceBox">
+            <span>Preço Total(R$):</span>
+            <span id="totalPrice" class="total-price">00</span>
+          </div>
         </div>
       </section>
+    </section>
+    <section class="searchModal">
+      <div class="searchModalContent">
+        <i class="fas fa-times-circle removeSearch"></i>
+        </br>
+        <input class="inputModalSearch" type="text">
+        </br>
+        <button class="searchButtonModal">Pesquisar</button>
+      </div>
     </section>
   </body>
 </html>

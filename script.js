@@ -169,9 +169,34 @@ const search = () => {
   document.querySelector('.inputSearch').value = '';
 };
 
+//Mostrar ou esconder carrrinho
+const cartVisible = () => {
+  const cart = document.querySelector('.cart');
+  cart.style.display === 'none' ? cart.style.display = 'flex' : cart.style.display = 'none';
+};
+
+//Mostrar ou esconder Search Modal
+const searchModalVisible = () => {
+  const searchModal = document.querySelector('.searchModal');
+  searchModal.style.display === 'none' ? searchModal.style.display = 'flex' : searchModal.style.display = 'none';
+};
+
+const searchModal = () => {
+  const input = document.querySelector('.inputModalSearch').value;
+  document.querySelector('.inputModalSearch').value = '';
+  searchModalVisible();
+  document.querySelector('.items').innerHTML = '';
+  fetchComputer(input);
+}
+
 window.onload = function onload() {
   fetchComputer('Motorola');
   reloadCart();
   document.querySelector('.empty-cart').addEventListener('click', eraseCart);
   document.querySelector('.searchButton').addEventListener('click', search);
+  document.querySelector('.removeCart').addEventListener('click', cartVisible);
+  document.querySelector('.cartMobile').addEventListener('click', cartVisible);
+  document.querySelector('.removeSearch').addEventListener('click', searchModalVisible);
+  document.querySelector('.searchMobileButton').addEventListener('click', searchModalVisible);
+  document.querySelector('.searchButtonModal').addEventListener('click', searchModal);
 };
