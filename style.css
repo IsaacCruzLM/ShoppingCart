@@ -26,11 +26,11 @@ header {
   margin-right: 1rem;
 }
 
-header i {
-  font-size: 40px;
+header div.logo i {
+  font-size: 30px;
   text-align: center;
   margin: auto;
-  margin-right: 2rem;
+  margin-right: 10px;
 }
 
 .search {
@@ -163,7 +163,9 @@ header i {
 }
 
 .removeCart {
-  display: none;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
 }
 
 .cart__title {
@@ -192,7 +194,7 @@ header i {
 }
 
 .cart__item {
-  margin: 0 0 20px 0;
+  margin: 0 10px 20px 0;
   display: flex;
   align-items: center;
 }
@@ -242,6 +244,16 @@ header i {
 
 .searchModal {
   display: none;
+}
+
+.cartMobile {
+  height: 1.6rem;
+  width: 2rem;
+}
+
+.searchCartIcon {
+  font-size: 100%;
+  margin: auto;
 }
 
 @media screen and (max-width: 630px) {
@@ -305,7 +317,6 @@ header i {
   }
 
   .cart, .searchModal {
-    display: none;  
     position: fixed; 
     z-index: 1; 
     left: 0;
@@ -326,18 +337,16 @@ header i {
     border-radius: 2px;
   }
 
-  .cart div i.removeCart {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 20px;
-  }
-
   .cart div ol li {
     width: 95%;
   }
 
   .cart div ol li span {
     margin-left: -15px;
+  }
+
+  .cart__item img {
+    margin-right: 5px;
   }
 
   .searchModal div {

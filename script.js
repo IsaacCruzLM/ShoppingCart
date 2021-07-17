@@ -65,6 +65,8 @@ const fetchComputerID = async (id) => {
 // Função para Adicionar item ao carrinho
 const addToShoppingCart = (event) => {
   const id = event.target.parentNode.firstChild.innerHTML;
+  const cart = document.querySelector('.cart');
+  if (cart.style.display === 'none') cartVisible();
   return fetchComputerID(id);
 };
 
