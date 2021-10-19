@@ -1,5 +1,5 @@
 <h1 align="center">
-  ## Projeto ShoppingCart
+  Projeto Shopping Cart
 </h1>
 
 <p align="center">
@@ -10,14 +10,12 @@
 
 <p align="center">
  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=49AA26&labelColor=000000" alt="PRs welcome!" />
-
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
 <br>
 
 <p align="center">
-  <img alt="dev.finances" src=".github/devfinances.png" width="100%">
+  <img alt="Projeto" src="" width="100%">
 </p>
 
 ## 🚀 Tecnologias
@@ -30,12 +28,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O dev.finances é uma aplicação de controle financeiro, onde é possível cadastrar e excluir transações e ver o saldo de entrada e saída
+O projeto Shopping Cart tem como finalidade realizar o Front-End de uma plaicação de um carrinha de compras online, utilizando-se de requisições a API do Mercado Livre.
 
 ## 🔖 Deploy
 
-Você pode visualizar a aplicação do projeto através [desse link]().
+Você pode visualizar a aplicação do projeto através [desse link](https://isaaccruzlm.github.io/ShoppingCart/).
 
 ---
 
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+By Isaac Cruz Leite Machado :wave:.
