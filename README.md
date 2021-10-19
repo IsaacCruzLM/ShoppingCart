@@ -15,7 +15,7 @@
 <br>
 
 <p align="center">
-  <img alt="Projeto" src="" width="100%">
+  <img alt="Projeto" src="./public/image.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O projeto Shopping Cart tem como finalidade realizar o Front-End de uma plaicação de um carrinha de compras online, utilizando-se de requisições a API do Mercado Livre.
+O projeto Shopping Cart tem como finalidade realizar o Front-End de uma aplicação responsiva de um carrinho de compras para um e-commerce, utilizando-se de requisições a API do Mercado Livre.
 
 ## 🔖 Deploy
 
